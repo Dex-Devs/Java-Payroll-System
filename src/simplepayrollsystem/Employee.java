@@ -2,26 +2,20 @@ package simplepayrollsystem;
 
 public class Employee {
      
-    // id counter --- FOR AUTO INCREMENTING
-    static int empIDCounter = 0;
-    
     // employee attributes
     private String empName;
-    private double hourlyPayRate;
-    private int noOfHoursPerWeek, empID;
+    private double hourlyPayRate, withHoldingTaxRate, stateTaxRate;
+    private int noOfHoursPerWeek;
     
     // constructor 
-    public Employee(String name, int noOfHrs, double hourlyPay ){
-        empIDCounter = empIDCounter + 1;
-        this.empID = empIDCounter;  
+    public Employee(String name, int noOfHrs, double hourlyPay, double withHoldingTax, double stateTax ){
         this.empName = name;
         this.noOfHoursPerWeek = noOfHrs;
         this.hourlyPayRate = hourlyPay;
+        this.withHoldingTaxRate = withHoldingTax;
+        this.stateTaxRate = stateTax;
     }
 
-    public int getEmpID() {
-        return empID;
-    }
 
     public String getEmpName() {
         return empName;
@@ -34,5 +28,15 @@ public class Employee {
     public double getHourlyPayRate() {
         return hourlyPayRate;
     }
+
+    public double getWithHoldingTax() {
+        return withHoldingTaxRate;
+    }
+
+    public double getStateTax() {
+        return stateTaxRate;
+    }
+    
+    
      
 }

@@ -1,23 +1,17 @@
 package simplepayrollsystem;
 
 public class Calculations {
-    static double withholdingTaxRate, stateTaxWithholdingRate;
-    
-    public Calculations(double wtr, double stwr){
-        Calculations.withholdingTaxRate = wtr;
-        Calculations.stateTaxWithholdingRate = stwr;
-    }
-    
+
     public static double calcGrossPay(int hoursWorked, double hourlyRate){
         return hoursWorked * hourlyRate;
     }
     
-    public static double calcWithHoldingTax(double grossPay){
-        return grossPay * Calculations.withholdingTaxRate;
+    public static double calcWithHoldingTax(double grossPay, double withholdingTaxRate ){
+        return grossPay * withholdingTaxRate;
     }
     
-    public static double calcStateTax(double grossPay){
-        return grossPay * Calculations.stateTaxWithholdingRate;
+    public static double calcStateTax(double grossPay, double stateTaxWithholdingRate){
+        return grossPay * stateTaxWithholdingRate;
     }
     
     public static double calcTotalDeductions(double withholdingTax, double stateTax){
